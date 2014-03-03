@@ -5,25 +5,25 @@ double function( double iX )
     return iX * iX + 2 * iX - 4;
 }
 
-double dichotomy( double a, double b, double eps )
+double dichotomy( double iA, double iB, double iEps )
 {
     double width, delta, x1, x2;
 
-    width = b - a;
+    width = iB - iA;
 
-    delta = eps / 10;
+    delta = iEps / 10;
 
-    while( width > eps )
+    while( width > iEps )
     {
-        x1 = ( a + b - delta ) / 2;
-        x2 = ( a + b + delta ) / 2;
+        x1 = ( iA + iB - delta ) / 2;
+        x2 = ( iA + iB + delta ) / 2;
 
         if( function( x1 ) > function( x2 ) )
-            a = x1;
+            iA = x1;
         else
-            b = x2;
+            iB = x2;
 
-        width = b - a;
+        width = iB - iA;
     }
 
     return x1;
